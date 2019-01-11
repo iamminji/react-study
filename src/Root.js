@@ -3,7 +3,8 @@ import {BrowserRouter} from "react-router-dom";
 import App from './containers/App'
 
 const Root = () => {
-    return (<BrowserRouter>
+    return (
+        <BrowserRouter>
             <App/>
         </BrowserRouter>
     );

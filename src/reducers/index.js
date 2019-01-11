@@ -1,19 +1,23 @@
-import {
-    CLOUD,
-    SUNNY,
-    RAIN,
-} from '../actions'
+import {RESPONSE_WEATHER_API, REQUEST_WEATHER_API} from '../actions'
 
 
-function weatherInfo(state = {}, action) {
+const initialState = {
+    "day": "",
+    "temp": 0
+};
+
+
+function weatherInfo(state = initialState, action) {
     switch (action.type) {
-        case CLOUD:
-            return state;
-        case SUNNY:
-            return state;
-        case RAIN:
-            return state;
+        case RESPONSE_WEATHER_API:
+            return {
+                ...state,
+                day: action.day,
+                info: action.info
+            };
         default:
             return state;
     }
 }
+
+export default weatherInfo;

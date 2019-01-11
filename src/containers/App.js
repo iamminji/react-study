@@ -1,20 +1,14 @@
 import React from 'react';
 
-import {Route} from "react-router-dom";
-
-import {
-    WeatherResult,
-    DustResult
-} from '../components'
 import Menu from "../components/Menu";
+import {WeatherContainer} from "../containers"
 
 
 const App = () => {
     return (
         <div>
             <Menu/>
-            <Route exact path="/:data?" component={WeatherResult}/>
-            <Route path="/response" component={DustResult}/>
+            <WeatherContainer/>
         </div>
     )
     

@@ -1,13 +1,9 @@
 // 애플리케이션에서 사용하는 명령어와 액션 생성자를 모아 놓음
 
+import axios from 'axios'
 
 // constants
 const WEATHER_API = 'https://jsonplaceholder.typicode.com/todos/1';
-
-// weather
-export const CLOUD = 'CLOUD';
-export const SUNNY = 'SUNNY';
-export const RAIN = 'RAIN';
 
 // action
 export const REQUEST_WEATHER_API = 'REQUEST_WEATHER_API';
@@ -15,15 +11,40 @@ export const RESPONSE_WEATHER_API = 'RESPONSE_WEATHER_API';
 
 
 function requestWeatherAPI() {
-    return {type: REQUEST_WEATHER_API}
+    return {
+        type: REQUEST_WEATHER_API
+    }
 }
 
-function responseWeatherAPI(data) {
-    return {type: RESPONSE_WEATHER_API, data}
+function responseSuccessWeatherAPI(day, info) {
+    return {
+        type: RESPONSE_WEATHER_API,
+        day: day,
+        info: info
+    }
 }
 
-export const fetchAPI = info => dispatch => {
+function responseFailedWeatherAPI(day, info) {
+    return {
+        type: RESPONSE_WEATHER_API,
+        day: day,
+        info: info
+    }
+}
+
+export const weatherAPI = info => dispatch => {
     dispatch(requestWeatherAPI());
-    return fetch(WEATHER_API + info)
-        .then(resp => dispatch(responseWeatherAPI(resp)))
+    
+    const date = new Date();
+    
+    return axios.get(WEATHER_API)
+        .then(response => {
+                dispatch(responseSuccessWeatherAPI(date.getDay(), response));
+                console.log("success!!!");
+            }
+        ).catch(err => {
+                dispatch(responseFailedWeatherAPI(date.getDay(), err));
+                console.log("fail!!!!!!!!!!!!!!!!11");
+            }
+        )
 };

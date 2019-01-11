@@ -10,8 +10,8 @@ const Menu = () => {
     return (
         <div>
             <ul>
-                <li><NavLink exact to="/" activeStyle={activeStyle}>메인</NavLink></li>
-                <li><NavLink exact to="/response" activeStyle={activeStyle}>테스트</NavLink></li>
+                <li><NavLink exact to="/weather" activeStyle={activeStyle}>A</NavLink></li>
+                <li><NavLink exact to="/dust" activeStyle={activeStyle}>B</NavLink></li>
             </ul>
         </div>
     )

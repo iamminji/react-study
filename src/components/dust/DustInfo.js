@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
 
-class DustResult extends Component {
+
+class DustInfo extends Component {
     
     componentDidMount() {
-        console.log('mount')
+        console.log("dust info mount");
     }
     
     render() {
         return (
             <div>
-                Dust
+                DustInfo
             </div>
         );
     }
 }
 
-export default DustResult;
+export default DustInfo;

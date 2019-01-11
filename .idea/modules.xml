@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/how-to-react-weather.iml" filepath="$PROJECT_DIR$/.idea/how-to-react-weather.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-weather-app-example.iml" filepath="$PROJECT_DIR$/.idea/react-weather-app-example.iml" />
     </modules>
   </component>
 </project>

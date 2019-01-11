@@ -1,7 +1,12 @@
-import WeatherResult from "./WeatherResult";
-import DustResult from "./DustResult";
+import Weather from './weather/Weather'
+import WeatherInfo from './weather/WeatherInfo'
+import Dust from './dust/Dust'
+import DustInfo from './dust/DustInfo'
+
 
 export {
-    WeatherResult,
-    DustResult
+    Weather,
+    WeatherInfo,
+    Dust,
+    DustInfo,
 }
